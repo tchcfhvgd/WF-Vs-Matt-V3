@@ -45,6 +45,8 @@ class HealthNSafety extends MusicBeatState
 
 		WeekData.reloadWeekFiles(true);
 
+		addTouchPad("NONE", "A");
+
 	}
 
 	var unlockInputs:Array<FlxKey> = [UP, UP, DOWN, DOWN, LEFT, RIGHT, LEFT, RIGHT, B, A, ENTER];
@@ -55,7 +57,7 @@ class HealthNSafety extends MusicBeatState
 		if(canLeave) enterAlpha += elapsed;
 		pressText.alpha = (Math.sin((enterAlpha-0.6)/0.5)/1.9) + 0.46;
 
-		var enter = FlxG.keys.justPressed.ENTER;
+		var enter = FlxG.keys.justPressed.ENTER || touchPad.buttonA.justPressed;
 
 		var key = FlxG.keys.firstJustPressed();
 		if (key != -1) {
