@@ -119,6 +119,7 @@ class TitleState extends MusicBeatState
 			}
 			persistentUpdate = true;
 			persistentDraw = true;
+			MobileData.init();
 		}
 
 		var pointerGraphic = Paths.image('pointer');
