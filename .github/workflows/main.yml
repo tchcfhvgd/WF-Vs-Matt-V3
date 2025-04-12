@@ -60,7 +60,7 @@ jobs:
           haxelib install hxvlc 1.9.3
           haxelib install flixel-tools 1.5.1
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev
-          haxelib git funkin.vis https://github.com/CodenameCrew/cne-funkVis
+          haxelib git funkin.vis https://github.com/FunkinCrew/funkVis
           haxelib git grig.audio https://gitlab.com/haxe-grig/grig.audio.git
           haxelib install tjson 1.4.0
           haxelib install hxdiscord_rpc 1.1.1
