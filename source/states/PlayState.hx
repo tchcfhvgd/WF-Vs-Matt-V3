@@ -435,6 +435,7 @@ class PlayState extends MusicBeatState
 
 		persistentUpdate = true;
 		persistentDraw = true;
+		FlxG.mouse.visible = false;
 
 		if (SONG == null)
 			SONG = Song.loadFromJson('tutorial');
