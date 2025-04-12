@@ -242,7 +242,7 @@ class MiiCreditsState extends MusicBeatState
 
         if(!quitting)
         {
-            if (controls.BACK)
+            if (controls.BACK  #if android || FlxG.android.justReleased.BACK #end)
             {
                 FlxG.sound.play(Paths.sound('cancelMenu'));
                 MusicBeatState.switchState(new MainMenuState());
