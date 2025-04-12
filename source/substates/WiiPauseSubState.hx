@@ -173,6 +173,7 @@ class WiiPauseSubState extends MusicBeatSubstate
 
         top.onClick = function() {
             closeMenu();
+	    FlxG.mouse.visible = false;
         }
 
         bot = new PauseOption(0, FlxG.height);
