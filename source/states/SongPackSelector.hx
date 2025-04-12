@@ -63,7 +63,7 @@ class SongPackSelector extends MusicBeatState
 	{	
 		if (!leavingState)
 		{
-			if (controls.BACK || #if android || FlxG.android.justReleased.BACK #end)
+			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
 			{
 				leavingState = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
