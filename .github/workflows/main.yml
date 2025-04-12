@@ -53,19 +53,16 @@ jobs:
           haxelib setup ~/haxelib
           haxelib git hxcpp https://github.com/MobilePorting/hxcpp
           haxelib git lime https://github.com/MobilePorting/lime
-          haxelib install openfl 9.4.0
-          haxelib git flixel https://github.com/MobilePorting/flixel 5.8.0
-          haxelib install flixel-ui 2.6.1
-          haxelib install flixel-addons 3.2.3
+          haxelib install openfl 9.3.3
+          haxelib git flixel https://github.com/MobilePorting/flixel 5.5.0
+          haxelib install flixel-ui 2.5.0
+          haxelib install flixel-addons 3.2.1
           haxelib install hxvlc 1.9.3
-          haxelib install flixel-tools 1.5.1
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev
           haxelib git funkin.vis https://github.com/FunkinCrew/funkVis
           haxelib git grig.audio https://gitlab.com/haxe-grig/grig.audio.git
           haxelib install tjson 1.4.0
-          haxelib install hxdiscord_rpc 1.1.1
           haxelib git linc_luajit https://github.com/MobilePorting/linc_luajit
-          haxelib install hxcpp-debug-server
           haxelib list
       
       - name: Setup Lime
