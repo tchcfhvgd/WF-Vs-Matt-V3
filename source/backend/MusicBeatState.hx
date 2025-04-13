@@ -179,7 +179,7 @@ class MusicBeatState extends FlxUIState
 
 		@:privateAccess
 		if (FlxG.mouse._globalScreenX != lastMouseX || FlxG.mouse._globalScreenY != lastMouseY) {
-			FlxG.mouse.visible = true;
+			//FlxG.mouse.visible = true;
 			MusicBeatState.mouseHideTimer = 5;
 			lastMouseX = FlxG.mouse._globalScreenX;
 			lastMouseY = FlxG.mouse._globalScreenY;
