@@ -91,6 +91,7 @@ class NotesSubState extends MusicBeatSubstate
 		bg.alpha = 0.25;
 		add(bg);
 
+		/*
 		var sigh:String;
 		var sighPosX:Int;
 
@@ -107,6 +108,7 @@ class NotesSubState extends MusicBeatSubstate
 		text.alignment = CENTERED;
 		text.setScale(0.4);
 		add(text);
+*/
 
 		copyButton = new FlxSprite(760, 50).loadGraphic(Paths.image('noteColorMenu/copy'));
 		copyButton.alpha = 0.6;
@@ -212,7 +214,7 @@ class NotesSubState extends MusicBeatSubstate
 
 	override function update(elapsed:Float) {
 		if (controls.BACK) {
-			FlxG.mouse.visible = false;
+			//FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			ClientPrefs.saveSettings();
                         controls.isInSubstate = false;
@@ -272,6 +274,7 @@ class NotesSubState extends MusicBeatSubstate
 		var controllerPressed:Bool = (controls.controllerMode && controls.ACCEPT);
 		//
 
+		/*
 		if(FlxG.keys.justPressed.CONTROL)
 		{
 			onPixel = !onPixel;
@@ -279,6 +282,7 @@ class NotesSubState extends MusicBeatSubstate
 			updateNotes(true);
 			FlxG.sound.play(Paths.sound('scrollMenu'), 0.6);
 		}
+*/
 
 		if(hexTypeNum > -1)
 		{
@@ -438,13 +442,6 @@ class NotesSubState extends MusicBeatSubstate
 					Std.int((pointerY() - colorPalette.y) / colorPalette.scale.y)));
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.6);
 				updateColors();
-			}
-			else if (pointerOverlaps(skinNote))
-			{
-				onPixel = !onPixel;
-				spawnNotes();
-				updateNotes(true);
-				FlxG.sound.play(Paths.sound('scrollMenu'), 0.6);
 			}
 			else if(pointerY() >= hexTypeLine.y && pointerY() < hexTypeLine.y + hexTypeLine.height &&
 					Math.abs(pointerX() - 1000) <= 84)
@@ -612,11 +609,11 @@ class NotesSubState extends MusicBeatSubstate
 
 		// clear groups
 		modeNotes.forEachAlive(function(note:FlxSprite) {
-			//note.kill();
+			note.kill();
 			note.destroy();
 		});
 		myNotes.forEachAlive(function(note:StrumNote) {
-			//note.kill();
+			note.kill();
 			note.destroy();
 		});
 		modeNotes.clear();
@@ -635,6 +632,7 @@ class NotesSubState extends MusicBeatSubstate
 
 		// respawn stuff
 		var res:Int = onPixel ? 160 : 17;
+		/*
 		skinNote = new FlxSprite(48, 24).loadGraphic(Paths.image('noteColorMenu/' + (onPixel ? 'note' : 'notePixel')), true, res, res);
 		skinNote.antialiasing = ClientPrefs.data.antialiasing;
 		skinNote.setGraphicSize(68);
@@ -643,6 +641,7 @@ class NotesSubState extends MusicBeatSubstate
 		skinNote.animation.play('anim', true);
 		if(!onPixel) skinNote.antialiasing = false;
 		add(skinNote);
+*/
 
 		var res:Int = !onPixel ? 160 : 17;
 		for (i in 0...3)
