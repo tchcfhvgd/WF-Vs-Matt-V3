@@ -585,6 +585,10 @@ class NoteOffsetState extends MusicBeatState
 		timeTxt.visible = !onComboMenu;
 		beatText.visible = !onComboMenu;
 
+		removeTouchPad();
+		addTouchPad(onComboMenu ? "NONE" : "LEFT_RIGHT", "A_B_C");
+		addTouchPadCamera();
+		
 		controllerPointer.visible = false;
 		FlxG.mouse.visible = false;
 		if(onComboMenu)
@@ -593,6 +597,8 @@ class NoteOffsetState extends MusicBeatState
 			controllerPointer.visible = controls.controllerMode;
 		}
 
+		final buttonAccept:String = (controls.mobileC) ? 'A' : (!controls.controllerMode) ? 'Accept' : 'Start';
+
 		var str:String;
 		var str2:String;
 		if(onComboMenu)
@@ -600,10 +606,7 @@ class NoteOffsetState extends MusicBeatState
 		else
 			str = 'Note/Beat Delay';
 
-		if(!controls.controllerMode)
-			str2 = '(Press Accept to Switch)';
-		else
-			str2 = '(Press Start to Switch)';
+		str2 = '(Press $buttonAccept to Switch)';
 
 		changeModeText.text = '< ${str.toUpperCase()} ${str2.toUpperCase()} >';
 	}
