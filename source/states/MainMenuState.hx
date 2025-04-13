@@ -1166,7 +1166,7 @@ private class WiiChannelSubstate extends MusicBeatSubstate
 		if (exiting)
 			return;
 
-		if (controls.BACK)
+		if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
 		{
 			exit();
 			return;
@@ -1447,7 +1447,7 @@ private class WiiMessageBoardSubstate extends MusicBeatSubstate {
 		if (exiting)
 			return;
 
-		if (controls.BACK && canExit)
+		if (controls.BACK #if android || FlxG.android.justReleased.BACK #end && canExit)
 		{
 			for (item in letters) item.selected = false;
 			if (!canSelect) {
@@ -1676,7 +1676,7 @@ class BreakPopupSubstate extends MusicBeatSubstate {
 		if (exitTimer > 0) {
 			exitTimer -= elapsed;
 		} else {
-			if (controls.ACCEPT) {
+			if (controls.ACCEPT || FlxG.mouse.justPressed) {
 				MainMenuState.instance.persistentUpdate = true;
 				close();
 			}
