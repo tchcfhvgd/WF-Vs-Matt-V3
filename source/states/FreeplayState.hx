@@ -402,7 +402,7 @@ class FreeplayState extends MusicBeatState
 				if(FlxG.mouse.wheel != 0)
 				{
 					var lastScroll = selectedScroll;
-					selectedScroll += -shiftMult * FlxG.;.wheel;
+					selectedScroll += -shiftMult * FlxG.mouse.wheel;
 					if (selectedScroll < 0) selectedScroll = 0;
 					if (selectedScroll > songs.length-4) selectedScroll = songs.length-4;
 					//changeSelection(-shiftMult * FlxG.;.wheel, false);
