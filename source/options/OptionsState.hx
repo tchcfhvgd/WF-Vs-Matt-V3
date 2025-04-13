@@ -7,7 +7,7 @@ import backend.StageData;
 
 class OptionsState extends MusicBeatState
 {
-	var options:Array<String> = ['Note Colors', 'Controls', 'Adjust Delay and Combo', 'Graphics', 'Visuals and UI', 'Gameplay', 'Reset Progression'];
+	var options:Array<String> = ['Note Colors', 'Controls', 'Adjust Delay and Combo', 'Graphics', 'Visuals and UI', 'Gameplay', 'Mobile Options', 'Reset Progression'];
 	private var grpOptions:FlxTypedGroup<WiiOption>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
@@ -29,6 +29,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				MusicBeatState.switchState(new options.NoteOffsetState());
+			case 'Mobile Options':
+				openSubState(new mobile.options.MobileOptionsSubState());
 			case 'Reset Progression':
 				var substate = new WiiOptionSelectSubstate("Are You Sure?", ["Reset", "Cancel"], "Cancel", function(optionName)
 				{
