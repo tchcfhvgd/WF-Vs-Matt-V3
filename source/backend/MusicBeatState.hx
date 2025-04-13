@@ -187,7 +187,7 @@ class MusicBeatState extends FlxUIState
 		if (MusicBeatState.mouseHideTimer > 0) {
 			MusicBeatState.mouseHideTimer -= elapsed;
 			if (MusicBeatState.mouseHideTimer <= 0) {
-				FlxG.mouse.visible = false;
+				//FlxG.mouse.visible = false;
 			}
 		}
 
