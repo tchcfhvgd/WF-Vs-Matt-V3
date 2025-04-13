@@ -499,7 +499,7 @@ class FreeplayState extends MusicBeatState
 				player.pauseOrResume(player.paused);
 			}
 		}
-		else if ((controls.ACCEPT || ()) && !player.playingMusic && !songs[curSelected].locked)
+		else if (controls.ACCEPT && !player.playingMusic && !songs[curSelected].locked)
 		{
 			persistentUpdate = false;
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
