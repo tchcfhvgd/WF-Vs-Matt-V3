@@ -273,6 +273,10 @@ class PlayState extends MusicBeatState
 	public var camZoomingMult:Float = 1;
 	public var camZoomingDecay:Float = 1;
 	private var curSong:String = "";
+	
+	public static var qqqeb6K:Bool = false;
+	public static var qqqeb7K:Bool = false;
+	public static var qqqeb9K:Bool = false;
 
 	public var gfSpeed:Int = 1;
 	public var health(default, set):Float = 1;
@@ -339,6 +343,7 @@ class PlayState extends MusicBeatState
 	public var opponentCameraOffset:Array<Float> = null;
 	public var girlfriendCameraOffset:Array<Float> = null;
 
+	var storyDifficultyText:String = "";
 	#if DISCORD_ALLOWED
 	// Discord RPC variables
 	var storyDifficultyText:String = "";
@@ -442,8 +447,8 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.bpm = SONG.bpm;
 
-
-		#if DISCORD_ALLOWED
+        storyDifficultyText = Difficulty.getString();
+	    #if DISCORD_ALLOWED
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
 		storyDifficultyText = Difficulty.getString();
 
@@ -461,6 +466,18 @@ class PlayState extends MusicBeatState
 		if(SONG.stage == null || SONG.stage.length < 1) {
 			SONG.stage = StageData.vanillaSongStage(songName);
 		}
+		switch (songName)
+			{
+				case 'snacks' | 'lazulii' | 'illusion':
+				if(storyDifficultyText = "6K")
+				qqqeb6K = true;
+				case 'heavenfall':
+				if(storyDifficultyText = "9K")
+				qqqeb9K = true;
+				case 'long awaited':
+				if(storyDifficultyText = "7K")
+				qqqeb7K = true;
+			}
 		curStage = SONG.stage;
 
 		var stageData:StageFile = StageData.getStageFile(curStage);
@@ -3576,6 +3593,10 @@ class PlayState extends MusicBeatState
 	}
 
 	override function destroy() {
+		qqqeb6K = false;
+		qqqeb7K = false;
+		qqqeb9K = false;
+		
 		#if LUA_ALLOWED
 		for (lua in luaArray)
 		{
