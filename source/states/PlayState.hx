@@ -469,14 +469,14 @@ class PlayState extends MusicBeatState
 		switch (songName)
 			{
 				case 'snacks' | 'lazulii' | 'illusion':
-				if(storyDifficultyText = "6K")
-				qqqeb6K == true;
+				if(storyDifficultyText == "6K")
+				qqqeb6K = true;
 				case 'heavenfall':
-				if(storyDifficultyText = "9K")
-				qqqeb9K == true;
+				if(storyDifficultyText == "9K")
+				qqqeb9K = true;
 				case 'long awaited':
-				if(storyDifficultyText = "7K")
-				qqqeb7K == true;
+				if(storyDifficultyText == "7K")
+				qqqeb7K = true;
 			}
 		curStage = SONG.stage;
 
