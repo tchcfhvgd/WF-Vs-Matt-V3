@@ -435,7 +435,6 @@ class PlayState extends MusicBeatState
 
 		persistentUpdate = true;
 		persistentDraw = true;
-		FlxG.mouse.visible = false;
 
 		if (SONG == null)
 			SONG = Song.loadFromJson('tutorial');
@@ -1305,6 +1304,7 @@ class PlayState extends MusicBeatState
 			}
 
 			startedCountdown = true;
+			FlxG.mouse.visible = false;
 			mobileControls.instance.visible = #if !android touchPad.visible = #end true;
 			Conductor.songPosition = -Conductor.crochet * 5;
 			setOnScripts('startedCountdown', true);
