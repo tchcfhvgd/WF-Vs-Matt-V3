@@ -27,6 +27,7 @@ import openfl.display.Shape;
 import flixel.graphics.FlxGraphic;
 import flixel.util.FlxSignal.FlxTypedSignal;
 import openfl.geom.Matrix;
+import states.PlayState;
 
 /**
  * A zone with 4 hint's (A hitbox).
@@ -45,6 +46,25 @@ class Hitbox extends MobileInputManager implements IMobileControls
 	public var buttonRight:TouchButton = new TouchButton(0, 0, [MobileInputID.HITBOX_RIGHT, MobileInputID.NOTE_RIGHT]);
 	public var buttonExtra:TouchButton = new TouchButton(0, 0, [MobileInputID.EXTRA_1]);
 	public var buttonExtra2:TouchButton = new TouchButton(0, 0, [MobileInputID.EXTRA_2]);
+	
+	//more
+	public var button6K0:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_6K0]);
+	public var button6K1:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_6K1]);
+	public var button6K2:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_6K2]);
+	public var button7Kspace:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_7KSPACE]);
+	public var button6K3:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_6K3]);
+	public var button6K4:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_6K4]);
+	public var button6K5:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_6K5]);
+	
+	public var button9K0:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K0]);
+	public var button9K1:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K1]);
+	public var button9K2:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K2]);
+	public var button9K3:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K3]);
+	public var button9K4:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K4]);
+	public var button9K5:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K5]);
+	public var button9K6:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K6]);
+	public var button9K7:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K7]);
+	public var button9K8:TouchButton = new TouchButton(0, 0, [MobileInputID.NOTE_9K8]);
 
 	public var instance:MobileInputManager;
 	public var onButtonDown:FlxTypedSignal<TouchButton->Void> = new FlxTypedSignal<TouchButton->Void>();
@@ -69,10 +89,44 @@ class Hitbox extends MobileInputManager implements IMobileControls
 		switch (extraMode)
 		{
 			case NONE:
+                if(PlayState.qqqeb6K)
+				{
+			    add(button6K0 = createHint(0, 0, Std.int(FlxG.width / 6), Std.int(FlxG.height * 1), 0xffE390E6));
+				add(button6K1 = createHint(FlxG.width / 6 * 1, 0, Std.int(FlxG.width / 6), Std.int(FlxG.height * 1), 0xff00FF00));
+				add(button6K2 = createHint(FlxG.width / 6 * 2, 0, Std.int(FlxG.width / 6), Std.int(FlxG.height * 1), 0xffFF0000));
+				add(button6K3 = createHint(FlxG.width / 6 * 3, 0, Std.int(FlxG.width / 6), Std.int(FlxG.height * 1), 0xffFFFF00));
+				add(button6K4 = createHint(FlxG.width / 6 * 4, 0, Std.int(FlxG.width / 6), Std.int(FlxG.height * 1), 0xff00EDFF));
+	            add(button6K5 = createHint(FlxG.width / 6 * 5, 0, Std.int(FlxG.width / 6), Std.int(FlxG.height * 1), 0xff0000FF));
+				}
+				else if(PlayState.qqqeb7K)
+				{
+			    add(button6K0 = createHint(0, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xffE390E6));
+				add(button6K1 = createHint(FlxG.width / 7 * 1, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xff00FF00));
+				add(button6K2 = createHint(FlxG.width / 7 * 2, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xffFF0000));
+				add(button7Kspace = createHint(FlxG.width / 7 * 3, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xffFFFFFF));
+				add(button6K3 = createHint(FlxG.width / 7 * 4, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xffFFFF00));
+				add(button6K4 = createHint(FlxG.width / 7 * 5, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xff00EDFF));
+	            add(button6K5 = createHint(FlxG.width / 7 * 6, 0, Std.int(FlxG.width / 7), Std.int(FlxG.height * 1), 0xff0000FF));
+				}
+				else if(PlayState.qqqeb9K)
+				{
+			    add(button9K0 = createHint(0, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xffE390E6));
+				add(button9K1 = createHint(FlxG.width / 9 * 1, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xff00EDFF));
+				add(button9K2 = createHint(FlxG.width / 9 * 2, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xff00FF00));
+				add(button9K3 = createHint(FlxG.width / 9 * 3, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xffFF0000));
+				add(button9K4 = createHint(FlxG.width / 9 * 4, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xffFFFFFF));
+				add(button9K5 = createHint(FlxG.width / 9 * 5, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xffFFFF00));
+	            add(button9K6 = createHint(FlxG.width / 9 * 6, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xffBB00FF));
+	            add(button9K7 = createHint(FlxG.width / 9 * 7, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xffFF0000));
+	            add(button9K8 = createHint(FlxG.width / 9 * 8, 0, Std.int(FlxG.width / 9), Std.int(FlxG.height * 1), 0xff0000FF));
+				}
+				else
+				{
 				add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFFC24B99));
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF00FFFF));
 				add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF12FA05));
 				add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), FlxG.height, 0xFFF9393F));
+				}
 			case SINGLE:
 				add(buttonLeft = createHint(0, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFC24B99));
 				add(buttonDown = createHint(FlxG.width / 4, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF00FFFF));
