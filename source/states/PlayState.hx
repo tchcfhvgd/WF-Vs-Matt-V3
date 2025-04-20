@@ -1201,9 +1201,11 @@ class PlayState extends MusicBeatState
 			return;
 		});
 
+		/*
 		video.bitmap.onTimeChanged.add(function(time) {
 			midSongVideoCurrentTimes[index] = Std.parseFloat(Std.string(time)); //convert to float
 		});
+                */
 	}
 
 	function startAndEnd()
@@ -2252,6 +2254,8 @@ class PlayState extends MusicBeatState
 
 		if (Conductor.songPosition > vocals.length)
 			vocals.volume = 0;
+
+		FlxG.mouse.visible = false;
 
 		setOnScripts('cameraX', camFollow.x);
 		setOnScripts('cameraY', camFollow.y);
