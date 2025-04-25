@@ -94,15 +94,15 @@ enum abstract MobileInputID(Int) from Int to Int
 	var NOTE_6K3 = 48;
 	var NOTE_6K4 = 49;
 	var NOTE_6K5 = 50;
-	var NOTE_9K0 = 1;
-	var NOTE_9K1 = 2;
-	var NOTE_9K2 = 3;
-	var NOTE_9K3 = 4;
-	var NOTE_9K4 = 5;
-	var NOTE_9K5 = 6;
-	var NOTE_9K6 = 7;
-	var NOTE_9K7 = 8;
-	var NOTE_9K8 = 9;
+	var NOTE_9K0 = 0;
+	var NOTE_9K1 = 1;
+	var NOTE_9K2 = 2;
+	var NOTE_9K3 = 3;
+	var NOTE_9K4 = 4;
+	var NOTE_9K5 = 5;
+	var NOTE_9K6 = 6;
+	var NOTE_9K7 = 7;
+	var NOTE_9K8 = 8;
 
 	@:from
 	public static inline function fromString(s:String)
