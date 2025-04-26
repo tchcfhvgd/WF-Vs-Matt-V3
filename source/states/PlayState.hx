@@ -3270,7 +3270,14 @@ class PlayState extends MusicBeatState
 		if (button.IDs.filter(id -> id.toString().startsWith("EXTRA")).length > 0)
 			return;
 
+		if(qqqeb9K)
+		{
+		var buttonCode:Int = (button.IDs[51].toString().startsWith('NOTE')) ? button.IDs[51] : button.IDs[52];
+		}
+		else
+		{
 		var buttonCode:Int = (button.IDs[0].toString().startsWith('NOTE')) ? button.IDs[0] : button.IDs[1];
+		}
 		callOnScripts('onButtonPressPre', [buttonCode]);
 		if (button.justPressed) keyPressed(buttonCode);
 		callOnScripts('onButtonPress', [buttonCode]);
@@ -3281,7 +3288,14 @@ class PlayState extends MusicBeatState
 		if (button.IDs.filter(id -> id.toString().startsWith("EXTRA")).length > 0)
 			return;
 
+		if(qqqeb9K)
+		{
+		var buttonCode:Int = (button.IDs[51].toString().startsWith('NOTE')) ? button.IDs[51] : button.IDs[52];
+		}
+		else
+		{
 		var buttonCode:Int = (button.IDs[0].toString().startsWith('NOTE')) ? button.IDs[0] : button.IDs[1];
+		}
 		callOnScripts('onButtonReleasePre', [buttonCode]);
 		if(buttonCode > -1) keyReleased(buttonCode);
 		callOnScripts('onButtonRelease', [buttonCode]);
